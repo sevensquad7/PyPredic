@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div>
+<div>
+<h1>Pagina para predicción del cancer</h1>
+</div>
+</div>
+<div class="container">
+<hr>
+<div>
+<div>
+<h3>Ingresar los siguientes datos en ese orden y separados por punto y coma: radio, textura, perimetro, area, suavidad, compacidad, concavidad, puntos concavos, simetria, fractal </h3>
+<form action="" method="post">
+{% csrf_token %}
+<table>
+{{ form }}
+</table>
+<input type="submit" value="Submit" />
+</form>
+</div>
+
+</div> <!-- row -->
+Prediccion:
+{% if prediccion %}
+{{ prediccion }}
+{% else %}
+Pendiente clasificar
+{% endif %}
+</div>
+{% endblock %}
